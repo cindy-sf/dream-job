@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import type { VFC } from 'react'
+import { Text } from '@welcome-ui/text'
 
 const Home: VFC = () => {
   return (
@@ -13,8 +14,8 @@ const Home: VFC = () => {
         />
         <title>Dream Job</title>
       </Head>
-      <p>edededede</p>
-      <p>Discover and deploy boilerplate example Next.js projects.</p>
+      <Text>edededede</Text>
+      <Text>Discover and deploy boilerplate example Next.js projects.</Text>
     </main>
   )
 }
