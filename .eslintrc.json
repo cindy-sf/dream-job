@@ -1,3 +1,36 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["prettier", "next", "next/core-web-vitals"],
+  "rules": {
+    "camelcase": "off",
+    "import/extensions": "off",
+    "import/prefer-default-export": "off",
+    "global-require": 0,
+    "no-use-before-define": "off",
+    "react/prop-types": "off",
+    "react/require-default-props": "off",
+    "react/jsx-props-no-spreading": "off",
+    "prettier/prettier": "error",
+    "no-unused-vars": "warn",
+    "no-console": "off",
+    "func-names": "off",
+    "no-undef": "off",
+    "no-process-exit": "off",
+    "import/no-unresolved": "off",
+    "object-shorthand": "off",
+    "class-methods-use-this": "off",
+    "react/jsx-filename-extension": [
+      1,
+      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+    ],
+    "react/jsx-one-expression-per-line": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "moduleDirectory": ["node_modules", "src/"]
+      }
+    }
+  }
 }
