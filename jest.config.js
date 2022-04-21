@@ -11,7 +11,17 @@ const customJestConfig = {
   transform: {
     '\\.(jpg|jpeg|png|gif|otf|svg|ttf)$': '<rootDir>/fileTransformer.js',
   },
-  moduleDirectories: ['node_modules'],
+  moduleDirectories: [
+    'node_modules',
+    'src',
+    './src/__mocks__/@testing-library/react',
+  ],
+  moduleNameMapper: {
+    '^@components(.*)$': '<rootDir>/src/components$1',
+    '^@src(.*)$': '<rootDir>/src$1',
+    '^@styles(.*)$': '<rootDir>/src/styles$1',
+    '^@types(.*)$': '<rootDir>/types$1',
+  },
   testEnvironment: 'jest-environment-jsdom',
   setupFilesAfterEnv: ['<rootDir>/jestSetup.js'],
 }
