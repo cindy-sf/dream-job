@@ -17,6 +17,7 @@ const customJestConfig = {
     './src/__mocks__/@testing-library/react',
   ],
   moduleNameMapper: {
+    '^@images(.*)$': '<rootDir>/public/images$1',
     '^@components(.*)$': '<rootDir>/src/components$1',
     '^@src(.*)$': '<rootDir>/src$1',
     '^@styles(.*)$': '<rootDir>/src/styles$1',
