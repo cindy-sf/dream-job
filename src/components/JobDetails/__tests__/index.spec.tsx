@@ -1,4 +1,3 @@
-import React from 'react'
 import { render, screen } from '@testing-library/react'
 
 import { organizationStub } from '@src/__mocks__/stubs/organization'

@@ -21,7 +21,13 @@ const JobCard: VFC<Props> = ({ job }): ReactElement => {
   const { contract_type, department, name, office, websites_urls } = job
 
   return (
-    <Box as="article" border="1px solid" marginBottom="lg" padding="md">
+    <Box
+      as="article"
+      border="1px solid"
+      borderColor="#666666"
+      marginBottom="lg"
+      padding="xl"
+    >
       <Box display="flex" justifyContent="space-arround">
         <Text variant="h4" mb="xxs" lines={1}>
           {name}
