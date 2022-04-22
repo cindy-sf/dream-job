@@ -1,36 +1,30 @@
 import { Job, Jobs, Organization } from '@src/types'
 
-type Department = string[]
+export const hasFoundJobByDepartments = (
+  job: Job,
+  selectedDepartment?: string
+): boolean => {
+  if (!selectedDepartment) return true
 
-const departments: Department = [
-  'business',
-  'marketing',
-  'media',
-  'operations',
-  'product',
-  'tech',
-]
-
-export const findJobsByName = (job: Job, jobName?: string): boolean => {
-  if (!jobName) return true
-  return job.name.toLowerCase().includes(jobName)
+  return (
+    // trime the department name because the api return some department with white space. Ex: 'Media '
+    job.department.name.trim().toLowerCase() == selectedDepartment.toLowerCase()
+  )
 }
 
-export const findJobsByOffice = (job: Job, officeName?: string): boolean => {
+export const hasFoundJobByName = (job: Job, jobName?: string): boolean => {
+  if (!jobName) return true
+  return job.name.toLowerCase().includes(jobName.toLowerCase())
+}
+
+export const hasFoundJobByOffice = (job: Job, officeName?: string): boolean => {
   if (!officeName) return true
   return job.office.name.toLowerCase().includes(officeName.toLowerCase())
 }
 
-export const findJobsByDepartments = (
-  job: Job,
-  selectedDepartment?: string
-) => {
-  if (!selectedDepartment) return true
-
-  return job.department.name.trim().toLowerCase() == selectedDepartment
-}
-
-export const findJobsWebsiteByRef = (websites: Organization['websites']) =>
+export const findJobsWebsiteByRef = (
+  websites: Organization['websites']
+): Organization['websites'] =>
   websites.filter(
     (website: { reference: string }) => website.reference === 'wttj_fr'
   )
@@ -40,10 +34,10 @@ export const groupFilters = (
   jobName?: string,
   officeName?: string,
   department?: string
-) =>
+): Jobs =>
   jobs.filter(
     (job) =>
-      findJobsByName(job, jobName) &&
-      findJobsByOffice(job, officeName) &&
-      findJobsByDepartments(job, department)
+      hasFoundJobByName(job, jobName) &&
+      hasFoundJobByOffice(job, officeName) &&
+      hasFoundJobByDepartments(job, department)
   )
