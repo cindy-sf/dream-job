@@ -1,12 +1,12 @@
 import type { AppProps } from 'next/app'
-import { GlobalStyle } from '../styles/global'
-import { createTheme, WuiProvider } from '@welcome-ui/core'
+
+import { createTheme, GlobalStyle, WuiProvider } from '@welcome-ui/core'
 
 const theme = createTheme()
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
-  <WuiProvider theme={theme}>
-    <GlobalStyle />
+  <WuiProvider theme={theme} hasGlobalStyle>
+    <GlobalStyle useReset />
     <Component {...pageProps} />
   </WuiProvider>
 )
