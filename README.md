@@ -1,34 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Your dream job 💼
 
-## Getting Started
+### Table of contents :
 
-First, run the development server:
+- [Presentation](#presentation)
+- [Prerequisite](#prerequisite)
+- [Installation](#installation)
+- [Extra informations](#extra-informations)
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+### Presentation
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Your dream job is a web app allowing you to consult awesome jobs of a firm powered with [Welcome kit API](https://developers.welcomekit.co/).
+You can access to the website by clicking 👉 [here](https://dream-gwg7gtyxm-csaintfleurant.vercel.app/) 👈
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### Prerequisite
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- Have [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) installed in your machine (this web app is running with node v14.17.0)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Installation
 
-## Learn More
+- Clone the project `git clone https://github.com/cindy-sf/dream-job.git`
+- Go to the project directory `cd dream-job`
+- Use the good version of node : `nvm use`
 
-To learn more about Next.js, take a look at the following resources:
+- Finally, install the dependencies by running `npm i`.
+- Congratulations, you are ready to launch the project 🎉.
+  Now run `npm run dev`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Extra informations
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Development choices :
 
-## Deploy on Vercel
+- **Technos**
+  NextJs for performance (SSR, image optimization, dynamic imports are natively proposed by the framework).
+  And also for DX (simplified routing system, faster compilation for example).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Tests**
+  React Testing Library, to getting as close as possible to the behavior of the user
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **Project architecture**
+  Based on [container/view](https://www.patterns.dev/posts/presentational-container-pattern/) design pattern.
+  Here the project tree : <br />
+  └── /src <br />
+  &nbsp;├── /mocks <br />
+  &nbsp;├── /components <br />
+  &nbsp;├── /pages <br />
+  &nbsp;├── /services <br />
+  &nbsp;├── /types <br />
+  &nbsp;├── /utils
+
+Enjoy 😄 !
