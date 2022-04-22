@@ -19,6 +19,7 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     outline: none;
     vertical-align: baseline;
+    list-style: none;
   }
 }
 `
